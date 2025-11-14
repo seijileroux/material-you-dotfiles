@@ -2,6 +2,8 @@
 
 This repository contains my Arch Linux Hyprland rice configuration as well as scripts to transform an arch system to a copy of mine.
 
+![thumbnail](images/thumbnail.png)
+
 ## Demo
 
 ### Rice showcase
