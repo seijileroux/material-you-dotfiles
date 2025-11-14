@@ -1,4 +1,4 @@
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/src"
 CONFIG_SOURCE="$HOME/.config"
 CONFIG_TARGET="$REPO_DIR/.config"
 
@@ -22,7 +22,8 @@ RICE_CONFIGS=(
     "fontconfig"
 
     # Riced applications
-    "GIMP"
+    "GIMP/3.0/themes"
+    "GIMP/3.0/theme.css"
     "fcitx5"
     "mozc"
 
@@ -60,7 +61,6 @@ for config in "${RICE_CONFIGS[@]}"; do
 done
 
 echo "Part 2: Copying ~/.mozilla"
-REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MOZILLA_SOURCE="$HOME/.mozilla"
 MOZILLA_TARGET="$REPO_DIR/.mozilla"
 RICE_CONFIGS=(
@@ -88,4 +88,4 @@ done
 
 echo "Part 3: Copying ~/.zshrc"
 cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
-cp "$HOME/Scripts" "$REPO_DIR/Scripts"
+cp -r "$HOME/Scripts" "$REPO_DIR/Scripts"
