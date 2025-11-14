@@ -14,9 +14,9 @@ This repository contains my Arch Linux Hyprland rice configuration as well as sc
 | **Dolphin (QT)** | **GIMP (GTK)** |
 | ![Dolphin](images/dolphin.png) | ![Gimp](images/gimp.png) |
 
-### Theme swapping
+### Theme swapping + Animated wallpaper
 
-https://github.com/user-attachments/assets/e6fa29b9-faf0-43d8-8ff4-9ccda627d9ed
+https://github.com/user-attachments/assets/6e62c5ae-b80c-4d13-82e5-a0f5d0adbfe2
 
 ## Features
 **Press Super+K to access the dynamically generated cheat sheet!**
@@ -27,6 +27,7 @@ https://github.com/user-attachments/assets/e6fa29b9-faf0-43d8-8ff4-9ccda627d9ed
     - audio/wifi/bluetooth/power
     - other fun stuff inside of "quick actions"
 - Wallpaper-generated material-you theme swapping (matugen) + wallpaper selector
+- Animated wallpapers! (allows .mp4)
 - Fully themed applications (firefox/vscode/gtk/qtct)
 - Application launchers
 - Workspace overview (alt tab)
