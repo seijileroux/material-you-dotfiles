@@ -1,6 +1,8 @@
 # My Archlinux Configs
 
-This repository contains my Arch Linux Hyprland rice configuration as well as scripts to transform an arch system to a copy of mine. **Disclaimer** the package list currently assumes NVIDIA cards, since I've only been installing my setup on NVIDIA machines.
+This repository contains my Arch Linux Hyprland rice configuration as well as scripts to transform an arch system to a copy of mine.
+
+**Disclaimer** the package list currently assumes NVIDIA cards, since I've only been installing my setup on NVIDIA machines.
 
 ![thumbnail](images/thumbnail.png)
 

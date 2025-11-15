@@ -39,7 +39,6 @@ RICE_CONFIGS=(
     "fastfetch"
     "neofetch"
     "btop"
-    "clipse"
 )
 
 for config in "${RICE_CONFIGS[@]}"; do
