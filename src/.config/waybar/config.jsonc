@@ -47,14 +47,14 @@
         "format": "󰻠 {usage}%",
         "tooltip": true,
         "interval": 2,
-        "on-click": "kitty --class floating --title floating -o initial_window_width=400 -o initial_window_height=300 -e btop"
+        "on-click": "kitty --class floating --title floating -o initial_window_width=400 -o initial_window_height=300 -e sh -c 'while true; do btop; sleep 0.1; done' &"
     },
 
     "memory": {
         "format": "󰍛 {percentage}%",
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G used",
         "interval": 2,
-        "on-click": "kitty --class floating --title floating -e btop"
+        "on-click": "kitty --class floating --title floating -e sh -c 'while true; do btop; sleep 0.1; done' &"
     },
 
     "network": {
@@ -62,7 +62,7 @@
         "format-disconnected": "󰛳 Disconnected",
         "tooltip-format": "Down: {bandwidthDownBits} Up: {bandwidthUpBits}",
         "interval": 2,
-        "on-click": "kitty --class floating --title floating -e btop"
+        "on-click": "kitty --class floating --title floating -e sh -c 'while true; do btop; sleep 0.1; done' &"
     },
 
     "custom/gpu": {

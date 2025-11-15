@@ -89,7 +89,7 @@ done
 
 echo "Part 3: Copying ~/.zshrc"
 cp "$REPO_DIR/.zshrc" "$HOME/.zshrc"
-cp -r "$REPO_DIR/Scripts" "$HOME/Scripts"
+cp -r "$REPO_DIR/Scripts" "$HOME"
 
 echo "Part 4: Enabling execution for scripts"
 find ~/.config/waybar -type f -name "*.sh" -exec chmod +x {} \;

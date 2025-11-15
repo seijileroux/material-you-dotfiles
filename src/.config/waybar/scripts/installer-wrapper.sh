@@ -39,7 +39,6 @@ if [ -n "$selected" ]; then
             {
                 name = $1
                 version = $2
-                
                 if (name in explicit_pkgs) {
                     icon = ""
                 } else if (name in aur_pkgs) {
@@ -47,7 +46,6 @@ if [ -n "$selected" ]; then
                 } else {
                     icon = ""
                 }
-                
                 print icon, name, "|", version
             }')
             echo "$PACKAGES" | rofi -matching fuzzy -dmenu -i -p " Installed Packages ( Explicit |  AUR |  Dependencies)" -theme "$HOME/.config/rofi/cheatsheet.rasi"
@@ -66,7 +64,7 @@ if [ -n "$selected" ]; then
         " List Foreign (AUR) Installed Packages")
             killall rofi
             sleep 0.05
-            PACKAGES=$(echo "$PACKAGES_AURP" | awk '
+            PACKAGES=$(echo "$PACKAGES_AUR" | awk '
             {
                 name = $1
                 version = $2

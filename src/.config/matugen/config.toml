@@ -74,6 +74,7 @@ output_path = '~/.local/share/color-schemes/MaterialYou.colors'
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/material-you.theme'
+post_hook = 'killall btop'
 
 [templates.vscode]
 input_path = '~/.config/matugen/templates/vscode-settings.json'

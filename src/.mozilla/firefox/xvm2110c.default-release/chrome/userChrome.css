@@ -27,7 +27,7 @@ body {
 
 /* Move bookmarks toolbar to bottom */
 #navigator-toolbox {
-  display: flex;''
+  display: flex;
   flex-direction: column;
 }
 
@@ -37,12 +37,12 @@ body {
 }
 
 .tabbrowser-tab[selected="true"] {
-  background-color: #623b4b !important;
+  background-color: #484458 !important;
   border-radius: 4px !important;
 }
 
 .tab-background[selected="true"] {
-  background-color: #623b4b !important;
+  background-color: #484458 !important;
   box-shadow: inset 0 0 0 2px #cbbeff !important;
 }
 

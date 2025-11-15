@@ -2,6 +2,10 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/src"
 CONFIG_SOURCE="$HOME/.config"
 CONFIG_TARGET="$REPO_DIR/.config"
 
+mkdir "$REPO_DIR/.config"
+mkdir "$REPO_DIR/.mozilla"
+mkdir "$REPO_DIR/Scripts"
+
 RICE_CONFIGS=(
     # Main rice
     "hypr"
@@ -38,7 +42,6 @@ RICE_CONFIGS=(
     "fastfetch"
     "neofetch"
     "btop"
-    "clipse"
 )
 
 for config in "${RICE_CONFIGS[@]}"; do
@@ -88,4 +91,4 @@ done
 
 echo "Part 3: Copying ~/.zshrc"
 cp "$HOME/.zshrc" "$REPO_DIR/.zshrc"
-cp -r "$HOME/Scripts" "$REPO_DIR/Scripts"
+cp -r "$HOME/Scripts" "$REPO_DIR"

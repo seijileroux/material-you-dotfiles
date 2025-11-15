@@ -22,7 +22,7 @@ sleep 0.1;
 kitty &
 hyprctl dispatch layoutmsg orientation right
 sleep 0.1;
-kitty --hold -e btop &
+kitty -e sh -c "while true; do btop; sleep 0.1; done" &
 hyprctl dispatch layoutmsg orientation down
 sleep 0.1;
 kitty --hold -e sh -c "yazi" &
