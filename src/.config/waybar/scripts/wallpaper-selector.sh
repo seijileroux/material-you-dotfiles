@@ -110,7 +110,7 @@ if [ -n "$selected" ]; then
             filename=$(basename "$selected")
             thumbnail_path="$THUMBNAIL_DIR/${filename%.*}.jpg"
 
-            # Copy thumbnail to cache for hyprlock/SDDM
+            # Copy thumbnail to cache for hyprlock
             cp "$thumbnail_path" "$HOME/.cache/last_wallpaper_static.jpg"
 
             # Apply theme using the thumbnail
@@ -128,7 +128,8 @@ if [ -n "$selected" ]; then
         else
             # Handle static image wallpaper
             # Convert and save to cache for hyprlock/SDDM (always as JPG)
-            convert "$wallpaper_path" "$HOME/.cache/last_wallpaper_static.jpg"
+            # Use [0] and +adjoin to ensure only first frame for GIFs
+            convert "$wallpaper_path[0]" +adjoin "$HOME/.cache/last_wallpaper_static.jpg"
 
             # Copy to SDDM theme directory (requires sudo)
             sudo cp "$HOME/.cache/last_wallpaper_static.jpg" /usr/share/sddm/themes/sugar-dark/Background.jpg

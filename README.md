@@ -4,7 +4,7 @@ This repository contains my Arch Linux Hyprland rice configuration as well as sc
 
 **Disclaimer 1:** the package list currently assumes NVIDIA cards, since I've only been installing my setup on machines with NVIDIA gpu.
 
-**Disclaimer 2:** I do not intend to add a settings app. My settings widget summons TUI-styled windows to for specific settings.
+**Disclaimer 2:** I do not intend to add a settings app. My settings widget summons TUI-styled windows for specific settings.
 
 ![thumbnail](images/thumbnail.png)
 
