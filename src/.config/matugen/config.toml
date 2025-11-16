@@ -84,14 +84,7 @@ post_hook = '~/.config/waybar/scripts/vscode-apply-colors.sh'
 [templates.gimp]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/GIMP/3.0/themes/MaterialYou/colors.css'
-
-[templates.firefox]
-input_path = '~/.config/matugen/templates/firefox-userChrome.css'
-output_path = '~/.mozilla/firefox/xvm2110c.default-release/chrome/userChrome.css'
-
-[templates.firefox-config]
-input_path = '~/.config/matugen/templates/firefox-config.css'
-output_path = '~/.mozilla/firefox/xvm2110c.default-release/chrome/config.css'
+post_hook = 'killall -HUP xsettingsd'
 
 [templates.nwg-lock]
 input_path = '~/.config/matugen/templates/colors.css'
@@ -101,4 +94,9 @@ post_hook = 'killall nwg-dock-hyprland; hyprctl dispatch exec "nwg-dock-hyprland
 [templates.nwg-drawer]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/nwg-drawer/colors.css'
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
 

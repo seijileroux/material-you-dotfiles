@@ -37,17 +37,17 @@ body {
 }
 
 .tabbrowser-tab[selected="true"] {
-  background-color: #484458 !important;
+  /* background-color: #484458 !important; */
   border-radius: 4px !important;
 }
 
 .tab-background[selected="true"] {
-  background-color: #484458 !important;
-  box-shadow: inset 0 0 0 2px #cbbeff !important;
+  /* background-color: #484458 !important; */
+  /* box-shadow: inset 0 0 0 2px #cbbeff !important; */
 }
 
 .tabbrowser-tab[selected="true"] .tab-label {
-  color: #ffd9e5 !important;
+  /* color: #ffd9e5 !important; */
   font-weight: bold !important;
 }
 

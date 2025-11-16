@@ -222,7 +222,7 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
 
-    alias ls='ls --color=auto'
+    alias ls='lsd --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -249,9 +249,10 @@ fi
 alias imlazy='sudo pacman -Syu && yay -Sy && sudo update-grub'
 
 # Some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='lsd -l'
+alias la='lsd -A'
+alias lah='lsd -lah'
+alias l='lsd -CF'
 
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .."
@@ -313,6 +314,9 @@ export NVM_DIR="$HOME/.config/nvm"
 
 # System Backup
 alias backup="sudo /usr/local/bin/system-backup.sh"
+
+#Zoxide
+eval "$(zoxide init zsh)"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
