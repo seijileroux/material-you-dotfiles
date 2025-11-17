@@ -7,7 +7,7 @@ RICE_CONFIGS=(
     # Main rice
     "hypr"
     "waybar"
-    "dunst"
+    "swaync"
     "rofi"
     "wlogout"
     "nwg-dock-hyprland"

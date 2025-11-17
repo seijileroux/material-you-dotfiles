@@ -1,0 +1,175 @@
+/*
+ * SwayNC Colors
+ * Generated with Matugen
+ * vim: ft=less
+ */
+
+<* for name, value in colors *>
+@define-color {{name}} {{value.default.hex}};
+<* endfor *>
+
+@define-color border-color @outline;
+@define-color bg @surface;
+@define-color bg-hover @surface_container_high;
+@define-color bg-focus @surface_container;
+@define-color bg-selected @primary;
+
+.notification-row {
+  outline: none;
+}
+.notification-row:focus,
+.notification-row:hover {
+  background: @bg-focus;
+}
+
+.notification {
+  border-radius: 10px;
+  margin: 6px 12px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.close-button {
+  background: @surface_container_highest;
+  color: @on_surface;
+  text-shadow: none;
+  padding: 0 2px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+}
+.close-button:hover {
+  background: @error;
+  color: @on_error;
+  transition: all 0.15s ease-in-out;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: @bg;
+  border: 1px solid @border-color;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @bg-hover;
+}
+
+.notification-default-action {
+  border-radius: 10px;
+}
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid @border-color;
+}
+
+.image {
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: @surface_bright;
+  border-radius: 10px;
+}
+
+.summary {
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.time {
+  color: @on_surface_variant;
+  text-shadow: none;
+}
+
+.body {
+  background: transparent;
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.top-action-title {
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.control-center-clear-all {
+  color: @on_surface;
+  text-shadow: none;
+  background: @bg;
+  border: 1px solid @border-color;
+  box-shadow: none;
+  border-radius: 10px;
+}
+.control-center-clear-all:hover {
+  background: @bg-hover;
+}
+
+.control-center-dnd {
+  border-radius: 10px;
+  background: @bg;
+  border: 1px solid @border-color;
+  box-shadow: none;
+}
+
+.control-center-dnd:checked {
+  background: @bg-selected;
+  color: @on_primary;
+}
+.control-center-dnd slider {
+  background: @bg-hover;
+}
+
+.control-center {
+  background: alpha(@surface_dim, 0.9);
+}
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+.widget-title {
+  color: @on_surface;
+}
+
+.widget-title > button {
+  background: @bg;
+  border: 1px solid @border-color;
+  border-radius: 10px;
+}
+
+.widget-title > button:hover {
+  background: @bg-hover;
+}

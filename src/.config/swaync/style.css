@@ -1,0 +1,273 @@
+/*
+ * SwayNC Colors
+ * Generated with Matugen
+ * vim: ft=less
+ */
+
+
+@define-color background #141318;
+
+@define-color error #ffb4ab;
+
+@define-color error_container #93000a;
+
+@define-color inverse_on_surface #312f36;
+
+@define-color inverse_primary #615690;
+
+@define-color inverse_surface #e6e1e9;
+
+@define-color on_background #e6e1e9;
+
+@define-color on_error #690005;
+
+@define-color on_error_container #ffdad6;
+
+@define-color on_primary #32285e;
+
+@define-color on_primary_container #e6deff;
+
+@define-color on_primary_fixed #1d1148;
+
+@define-color on_primary_fixed_variant #493e76;
+
+@define-color on_secondary #322e41;
+
+@define-color on_secondary_container #e6dff9;
+
+@define-color on_secondary_fixed #1c192b;
+
+@define-color on_secondary_fixed_variant #484458;
+
+@define-color on_surface #e6e1e9;
+
+@define-color on_surface_variant #c9c4d0;
+
+@define-color on_tertiary #492534;
+
+@define-color on_tertiary_container #ffd9e5;
+
+@define-color on_tertiary_fixed #30111f;
+
+@define-color on_tertiary_fixed_variant #623b4b;
+
+@define-color outline #938f99;
+
+@define-color outline_variant #48454e;
+
+@define-color primary #cbbeff;
+
+@define-color primary_container #493e76;
+
+@define-color primary_fixed #e6deff;
+
+@define-color primary_fixed_dim #cbbeff;
+
+@define-color scrim #000000;
+
+@define-color secondary #cac3dc;
+
+@define-color secondary_container #484458;
+
+@define-color secondary_fixed #e6dff9;
+
+@define-color secondary_fixed_dim #cac3dc;
+
+@define-color shadow #000000;
+
+@define-color source_color #613ed8;
+
+@define-color surface #141318;
+
+@define-color surface_bright #3a383e;
+
+@define-color surface_container #201f24;
+
+@define-color surface_container_high #2b292f;
+
+@define-color surface_container_highest #36343a;
+
+@define-color surface_container_low #1c1b20;
+
+@define-color surface_container_lowest #0f0d13;
+
+@define-color surface_dim #141318;
+
+@define-color surface_tint #cbbeff;
+
+@define-color surface_variant #48454e;
+
+@define-color tertiary #edb8cb;
+
+@define-color tertiary_container #623b4b;
+
+@define-color tertiary_fixed #ffd9e5;
+
+@define-color tertiary_fixed_dim #edb8cb;
+
+
+@define-color border-color @outline;
+@define-color bg @surface;
+@define-color bg-hover @surface_container_high;
+@define-color bg-focus @surface_container;
+@define-color bg-selected @primary;
+
+.notification-row {
+  outline: none;
+}
+.notification-row:focus,
+.notification-row:hover {
+  background: @bg-focus;
+}
+
+.notification {
+  border-radius: 10px;
+  margin: 6px 12px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.close-button {
+  background: @surface_container_highest;
+  color: @on_surface;
+  text-shadow: none;
+  padding: 0 2px;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+}
+.close-button:hover {
+  background: @error;
+  color: @on_error;
+  transition: all 0.15s ease-in-out;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: @bg;
+  border: 1px solid @border-color;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: @bg-hover;
+}
+
+.notification-default-action {
+  border-radius: 10px;
+}
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid @border-color;
+}
+
+.image {
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: @surface_bright;
+  border-radius: 10px;
+}
+
+.summary {
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.time {
+  color: @on_surface_variant;
+  text-shadow: none;
+}
+
+.body {
+  background: transparent;
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.top-action-title {
+  color: @on_surface;
+  text-shadow: none;
+}
+
+.control-center-clear-all {
+  color: @on_surface;
+  text-shadow: none;
+  background: @bg;
+  border: 1px solid @border-color;
+  box-shadow: none;
+  border-radius: 10px;
+}
+.control-center-clear-all:hover {
+  background: @bg-hover;
+}
+
+.control-center-dnd {
+  border-radius: 10px;
+  background: @bg;
+  border: 1px solid @border-color;
+  box-shadow: none;
+}
+
+.control-center-dnd:checked {
+  background: @bg-selected;
+  color: @on_primary;
+}
+.control-center-dnd slider {
+  background: @bg-hover;
+}
+
+.control-center {
+  background: alpha(@surface_dim, 0.9);
+}
+.control-center-list {
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+.widget-title {
+  color: @on_surface;
+}
+
+.widget-title > button {
+  background: @bg;
+  border: 1px solid @border-color;
+  border-radius: 10px;
+}
+
+.widget-title > button:hover {
+  background: @bg-hover;
+}

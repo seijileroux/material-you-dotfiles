@@ -216,6 +216,7 @@ tooltip label {
     padding-right: 12px;
 }
 
+#custom-notification,
 #mpris {
     background: @primary;
     color: @surface_container_high;

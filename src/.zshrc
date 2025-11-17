@@ -101,7 +101,7 @@ configure_prompt() {
     case "$PROMPT_ALTERNATIVE" in
         twoline)
             # Two-line rainbow format with Arch symbol
-            PROMPT=$'%F{cyan}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{red}%n%b%F{yellow}'$prompt_symbol$'%B%F{green}%m%b%F{cyan})%F{reset}[%B%F{blue}%(6~.%-1~/…/%4~.%5~)%b%F{reset}]%F{reset}[%B%F{magenta}%D{%Y/%m/%d}%b%F{reset}]%F{reset}[%B%F{yellow}%D{%H:%M:%S}%b%F{reset}]\n%F{cyan}└─%B%(#.%F{red}#.%F{green}$)%b%F{reset} '
+            PROMPT=$'%F{cyan}╭──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{red}%n%b%F{yellow}'$prompt_symbol$'%B%F{green}%m%b%F{cyan})%F{reset}[%B%F{blue}%(6~.%-1~/…/%4~.%5~)%b%F{reset}]%F{reset}[%B%F{magenta}%D{%Y/%m/%d}%b%F{reset}]%F{reset}[%B%F{yellow}%D{%H:%M:%S}%b%F{reset}]\n%F{cyan}╰─%B%(#.%F{red}#.%F{green}$)%b%F{reset} '
             RPROMPT=
             ;;
         oneline)

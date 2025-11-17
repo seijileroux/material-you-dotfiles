@@ -96,7 +96,7 @@ PACKAGES=(
     cliphist
     ripgrep
     duf
-    dunst
+    swaync
     fd
     fzf
     cmatrix

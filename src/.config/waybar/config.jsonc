@@ -17,7 +17,8 @@
 
     "modules-center": [
         "mpris",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "custom/notification"
     ],
 
     "modules-right": [
@@ -86,13 +87,14 @@
         "format": "{player_icon}",
         "format-paused": "{status_icon}",
         "player-icons": {
-            "default": "",
+            "default": "",
             "mpv": ""
         },
         "status-icons": {
-            "paused": ""
+            "paused": ""
         },
-        "tooltip-format": " {player}\n {artist}\n {album}-{title}\n [{length}]"
+        "interval":1,
+        "tooltip-format": " {player}\n {artist}\n {album} {title}\n [{position}/{length}]"
     },
     
     "hyprland/workspaces": {
@@ -104,6 +106,27 @@
         "persistent-workspaces": {
             "*": 10
         }
+    },
+
+    "custom/notification": {
+        "tooltip-format": "Notifications: {}",
+        "format": "{} {icon}",
+        "format-icons": {
+            "notification": "󰂚",
+            "none": "󰂜",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰪑",
+            "inhibited-notification": "󰂚",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+        "escape": true
     },
 
     // Right modules
