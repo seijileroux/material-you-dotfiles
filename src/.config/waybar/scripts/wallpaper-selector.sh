@@ -85,7 +85,7 @@ if [ "$1" = "random" ]; then
     selected="${wallpapers[$RANDOM % ${#wallpapers[@]}]}"
 else
     # Show rofi menu with image previews using grid theme
-    selected=$(build_menu | rofi -dmenu -i -p "Wallpaper" -show-icons -theme ~/.config/rofi/grid.rasi -theme-str 'element-icon { size: 3em; }' -me-select-entry '' -me-accept-entry MousePrimary)
+    selected=$(build_menu | rofi -dmenu -i -p "Wallpaper" -show-icons -theme ~/.config/rofi/grid.rasi -theme-str 'element-icon { size: 6em; }' -me-select-entry '' -me-accept-entry MousePrimary)
 fi
 
 # If user selected something, set it as wallpaper
