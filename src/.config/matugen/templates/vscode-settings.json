@@ -55,20 +55,20 @@
         "panelTitle.activeForeground": "{{colors.primary.default.hex}}",
         "terminal.foreground": "{{colors.on_surface.default.hex}}",
         "terminal.background": "{{colors.surface.default.hex}}",
-        "terminal.ansiBlack": "#262626",
-        "terminal.ansiBrightBlack": "#4c4c4c",
-        "terminal.ansiRed": "#ac8a8c",
-        "terminal.ansiBrightRed": "#c49ea0",
-        "terminal.ansiGreen": "#8aac8b",
-        "terminal.ansiBrightGreen": "#9ec49f",
-        "terminal.ansiYellow": "#aca98a",
-        "terminal.ansiBrightYellow": "#c4c19e",
+        "terminal.ansiBlack": "#4c4c4c",
+        "terminal.ansiBrightBlack": "#262626",
+        "terminal.ansiRed": "#E88594",
+        "terminal.ansiBrightRed": "#E88594",
+        "terminal.ansiGreen": "#A3D393",
+        "terminal.ansiBrightGreen": "#A3D393",
+        "terminal.ansiYellow": "#E9CE9D",
+        "terminal.ansiBrightYellow": "#E9CE9D",
         "terminal.ansiBlue": "{{colors.primary.default.hex}}",
         "terminal.ansiBrightBlue": "{{colors.primary_container.default.hex}}",
-        "terminal.ansiMagenta": "#ac8aac",
-        "terminal.ansiBrightMagenta": "#c49ec4",
-        "terminal.ansiCyan": "#8aacab",
-        "terminal.ansiBrightCyan": "#9ec3c4",
+        "terminal.ansiMagenta": "#C3A0F3",
+        "terminal.ansiBrightMagenta": "#C3A0F3",
+        "terminal.ansiCyan": "#81C2E1",
+        "terminal.ansiBrightCyan": "#81C2E1",
         "terminal.ansiWhite": "#e7e7e7",
         "terminal.ansiBrightWhite": "#f0f0f0",
         "terminal.selectionBackground": "{{colors.secondary_fixed_dim.default.hex}}",
@@ -79,18 +79,18 @@
         "scrollbarSlider.activeBackground": "{{colors.primary.default.hex}}80"
     },
     "editor.tokenColorCustomizations": {
-        "comments": "#8a8a8a",
+        "comments": "#4c4c4c",
         "keywords": "{{colors.primary.default.hex}}",
-        "strings": "#a8c49e",
-        "numbers": "#c4a89e",
+        "strings": "#A3D393",
+        "numbers": "#E9CE9D",
         "functions": "{{colors.secondary.default.hex}}",
-        "types": "#9ec4c1",
+        "types": "#81C2E1",
         "variables": "{{colors.on_surface.default.hex}}",
         "textMateRules": [
             {
                 "scope": ["comment", "punctuation.definition.comment"],
                 "settings": {
-                    "foreground": "#8a8a8a",
+                    "foreground": "#4c4c4c",
                     "fontStyle": "italic"
                 }
             },
@@ -109,25 +109,25 @@
             {
                 "scope": ["entity.name.type", "entity.name.class", "support.class", "support.type"],
                 "settings": {
-                    "foreground": "#9ec4c1"
+                    "foreground": "#81C2E1"
                 }
             },
             {
                 "scope": ["string", "string.quoted", "string.template"],
                 "settings": {
-                    "foreground": "#a8c49e"
+                    "foreground": "#A3D393"
                 }
             },
             {
                 "scope": ["constant.numeric", "constant.language.numeric"],
                 "settings": {
-                    "foreground": "#c4a89e"
+                    "foreground": "#E9CE9D"
                 }
             },
             {
                 "scope": ["constant.language", "constant.language.boolean", "constant.language.null"],
                 "settings": {
-                    "foreground": "#c49ea0"
+                    "foreground": "#E88594"
                 }
             },
             {
@@ -139,7 +139,7 @@
             {
                 "scope": ["variable.parameter", "variable.other.constant"],
                 "settings": {
-                    "foreground": "#b8acb0"
+                    "foreground": "#C3A0F3"
                 }
             },
             {
@@ -158,13 +158,13 @@
             {
                 "scope": ["punctuation.definition.string", "punctuation.definition.template-expression"],
                 "settings": {
-                    "foreground": "#a8c49e"
+                    "foreground": "#A3D393"
                 }
             },
             {
                 "scope": ["support.constant", "constant.other"],
                 "settings": {
-                    "foreground": "#aca8c4"
+                    "foreground": "#C3A0F3"
                 }
             },
             {
@@ -184,20 +184,20 @@
             {
                 "scope": ["markup.italic"],
                 "settings": {
-                    "foreground": "#a8c49e",
+                    "foreground": "#A3D393",
                     "fontStyle": "italic"
                 }
             },
             {
                 "scope": ["meta.import", "meta.require"],
                 "settings": {
-                    "foreground": "#b8acb0"
+                    "foreground": "#C3A0F3"
                 }
             },
             {
                 "scope": ["variable.language.this", "variable.language.super"],
                 "settings": {
-                    "foreground": "#c49ea0",
+                    "foreground": "#E88594",
                     "fontStyle": "italic"
                 }
             }

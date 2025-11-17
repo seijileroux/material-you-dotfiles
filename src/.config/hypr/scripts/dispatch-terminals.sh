@@ -8,5 +8,5 @@ sleep 0.1;
 kitty -e sh -c "while true; do btop; sleep 0.1; done" &
 hyprctl dispatch layoutmsg orientation down
 sleep 0.1;
-kitty --hold -e sh -c "yazi" &
+kitty -e sh -c "while true; do yazi; sleep 0.1; done" &
 kitty -e sh -c "while true; do ~/.config/waybar/scripts/code-launcher.sh; sleep 0.1; done"  &

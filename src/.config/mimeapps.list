@@ -14,3 +14,4 @@ image/png=imv-dir.desktop
 inode/directory=org.kde.dolphin.desktop
 text/plain=code-oss.desktop;
 video/mp4=mpv.desktop
+x-scheme-handler/discord=vesktop.desktop

@@ -16,8 +16,6 @@ RICE_CONFIGS=(
     "nwg-dock-hyprland"
 
     # Theming
-    "gtk-3.0"
-    "gtk-4.0"
     "kdeglobals"
     "qt5ct"
     "qt6ct"
@@ -29,7 +27,6 @@ RICE_CONFIGS=(
     "GIMP/3.0/themes"
     "GIMP/3.0/theme.css"
     "fcitx5"
-    "mozc"
 
     # File manager (Dolphin)
     "dolphinrc"
@@ -40,7 +37,6 @@ RICE_CONFIGS=(
     # Terminal
     "kitty"
     "fastfetch"
-    "neofetch"
     "btop"
 )
 
