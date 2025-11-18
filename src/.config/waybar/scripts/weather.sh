@@ -22,17 +22,18 @@ else
     echo "f" > "$STATE_FILE"
 fi
 
-# get weather condition from wttr.in
-weather_code=$(curl -s 'wttr.in/?format=%c' 2>/dev/null)
-
-# get temperature in the appropriate unit
+# Determine unit parameter for wttr.in
 if [ "$unit" = "f" ]; then
-    temperature=$(curl -s 'wttr.in/?format=%t&u' 2>/dev/null | sed 's/+//g')
+    unit_param="u"
 else
-    temperature=$(curl -s 'wttr.in/?format=%t&m' 2>/dev/null | sed 's/+//g')
+    unit_param="m"
 fi
 
-# map weather code to
+# Format: icon|temp|feels_like|condition|humidity|wind|precipitation|pressure|location
+weather_data=$(curl -s "wttr.in/?format=%c|%t|%f|%C|%h|%w|%p|%P|%l&$unit_param" 2>/dev/null)
+IFS='|' read -r weather_code temperature feels_like condition humidity wind_speed precipitation pressure location <<< "$weather_data"
+temperature=$(echo "$temperature" | sed 's/+//g')
+feels_like=$(echo "$feels_like" | sed 's/+//g')
 case "$weather_code" in
     "✨ "|"Clear") icon="󰖙" ;;                   # Clear/Sunny
     "⛅️ "|"Partly cloudy") icon="󰖕" ;;           # Partly cloudy
@@ -42,7 +43,16 @@ case "$weather_code" in
     "⛈️ "|"Thunderstorm") icon="󰙾" ;;            # Thunderstorm
     "🌨️ "|"Snow") icon="󰖘" ;;                    # Snow
     "🌦️ "|"Light showers") icon="󰼳" ;;           # Light showers
-    *) icon="󰖙" ;;                              # Default = sunny
+    *) icon="󰖙" ;;                               # Default = sunny
 esac
-
-echo "$icon $temperature"
+# Construct tooltip
+tooltip=" $location\n\n"
+tooltip+="  $temperature\n"
+tooltip+="  Feels like $feels_like\n"
+tooltip+="$icon  $condition\n"
+tooltip+="  $humidity\n"
+tooltip+="  $wind_speed\n"
+tooltip+="  $precipitation\n"
+tooltip+="󱤊  $pressure\n"
+tooltip+="\n󰳽 to toggle °C/°F"
+echo "{\"text\":\"$icon $temperature\",\"tooltip\":\"<big>Weather</big>\n$tooltip\"}"

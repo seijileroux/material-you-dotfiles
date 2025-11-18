@@ -8,7 +8,7 @@ RICE_CONFIGS=(
     "hypr"
     "waybar"
     "swaync"
-    "rofi"
+    #"rofi"
     "wlogout"
     "nwg-dock-hyprland"
 

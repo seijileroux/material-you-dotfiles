@@ -2,7 +2,7 @@
 
 configuration {
     show-icons: false;
-    font: "JetBrainsMono Nerd Font 7";
+    font: "JetBrainsMono Nerd Font 14";
 }
 
 * {
@@ -16,7 +16,7 @@ window {
     border-color: @primary;
     border-radius: 16px;
     padding: 16px;
-    width: 500px;
+    width: 550px;
     location: north east;
     anchor: north east;
     x-offset: -20;

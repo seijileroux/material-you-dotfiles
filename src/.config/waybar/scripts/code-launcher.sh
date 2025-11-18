@@ -10,4 +10,5 @@ path=$(fd -H -E .git -t f -t d | fzf \
 
 if [ -n "$path" ]; then
     code-oss "$path"
+    notify-send -a "System" "Code launcher" "Opened $path" -i preferences-desktop
 fi

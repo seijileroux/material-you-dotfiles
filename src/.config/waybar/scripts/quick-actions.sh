@@ -2,6 +2,7 @@
 
 menu=(
     " Keybinds"
+    " Calculator"
     "󰹑 Screenshot"
     "󰅇 Clipboard"
     " Code"
@@ -19,23 +20,9 @@ selected=$(printf '%s\n' "${menu[@]}" | rofi -dmenu -i -p "Quick Actions" -theme
 
 # Handle selection
 if [ -n "$selected" ]; then
-
     case "$selected" in
         "󰹑 Screenshot")
-            killall rofi
-            sleep 0.05
-            wayfreeze & PID=$!
-            sleep 0.1
-            REGION=$(slurp)
-            kill $PID 2>/dev/null
-            wait $PID 2>/dev/null
-            sleep 0.6
-            if [ -n "$REGION" ]; then
-                grim -g "$REGION" -t png - | wl-copy -t image/png
-                notify-send "Screenshot" "Copied to clipboard"
-            else
-                notify-send "Screenshot" "Cancelled"
-            fi
+            ~/.config/waybar/scripts/take-screenshot.sh
             ;;
         "󰅇 Clipboard")
             clipse-gui
@@ -47,12 +34,7 @@ if [ -n "$selected" ]; then
             rofi -show emoji -theme ~/.config/rofi/config.rasi
             ;;
         " Icons")
-            selected_icon=$(~/.config/waybar/scripts/icon-picker-helper.sh | rofi -dmenu -i -p "Icon Picker" -theme ~/.config/rofi/config.rasi)
-            if [ -n "$selected_icon" ]; then
-                icon=$(echo "$selected_icon" | awk '{print $1}')
-                echo -n "$icon" | wl-copy
-                notify-send 'Icon Picker' 'Icon Picker' "Copied: $icon"
-            fi
+            ~/.config/waybar/scripts/icon-picker.sh
             ;;
         " Picker")
             ~/.config/waybar/scripts/color-picker.sh
@@ -64,13 +46,16 @@ if [ -n "$selected" ]; then
             ~/.config/waybar/scripts/installer-wrapper.sh
             ;;
         " Bluetooth")
-            rofi-bluetooth
+            ~/.config/waybar/scripts/rofi-bluetooth.sh
             ;;
         "󰁹 Power")
             ~/.config/waybar/scripts/power-profile.sh
             ;;
         " Keybinds")
             ~/.config/hypr/scripts/cheatsheet.sh
+            ;;
+        " Calculator")
+            rofi -show calc -modi calc -no-show-match -no-sort
             ;;
     esac
 fi

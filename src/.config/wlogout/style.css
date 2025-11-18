@@ -18,8 +18,8 @@ button {
     background-position: center;
     background-size: 25%;
     margin: 20px;
-    min-width: 200px;
-    min-height: 200px;
+    min-width: 100px;
+    min-height: 100px;
     transition: all 0.3s ease;
 }
 
