@@ -64,4 +64,5 @@ You will need **pywalfox** as a browser extension for firefox to be themed prope
 
 ## Acknowledgements
 
-- My firefox `userChrome.css` is modified from [textfox](https://github.com/adriankarlen/textfox) 
+- My firefox `userChrome.css` is modified from [textfox](https://github.com/adriankarlen/textfox)
+- Rofi bluetooth module taken from [rofi-bluetooth](https://github.com/nickclyde/rofi-bluetooth)
