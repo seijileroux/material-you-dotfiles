@@ -24,6 +24,7 @@ RICE_CONFIGS=(
     "GIMP/3.0/themes"
     "GIMP/3.0/theme.css"
     "fcitx5"
+    "nvim"
 
     # File manager (Dolphin)
     "dolphinrc"

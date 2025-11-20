@@ -109,3 +109,8 @@ post_hook = 'killall yazi'
 [templates.vesktop]
 input_path = '~/.config/matugen/templates/vesktop-system24.theme.css'
 output_path = '~/.config/vesktop/themes/system24.theme.css'
+
+[templates.neovim]
+input_path = '~/.config/matugen/templates/neovim-theme.lua'
+output_path = '~/.config/nvim/matugen.lua'
+post_hook = 'pkill -SIGUSR1 nvim'
