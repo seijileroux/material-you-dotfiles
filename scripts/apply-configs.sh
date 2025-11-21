@@ -91,3 +91,32 @@ echo "Part 4: Enabling execution for scripts"
 find ~/.config/waybar -type f -name "*.sh" -exec chmod +x {} \;
 find ~/.config/hypr -type f -name "*.sh" -exec chmod +x {} \;
 find ~/Scripts -type f -name "*.sh" -exec chmod +x {} \;
+
+echo "Part 5: Creating other files/directories"
+LATITUDE="0.0"
+LONGITUDE="0.0"
+mkdir ~/Pictures
+mkdir ~/Pictures/Wallpapers
+mkdir ~/Pictures/Screenshots
+cp -r "$REPO_DIR/Flags" ~/Pictures #flags for VPN
+if [ ! -f "~/.weather_location" ]; then # location for weather tracking
+    echo "$LATITUDE,$LONGITUDE" > ~/.weather_location
+    chmod 600 ~/.weather_location
+fi
+
+# Copy figlet fonts
+if [ -d "$REPO_DIR/figlet-fonts" ]; then
+    sudo cp -r "$REPO_DIR/figlet-fonts/"* /usr/share/figlet/fonts/
+    echo "  ✓ Copied figlet fonts to /usr/share/figlet/fonts/"
+else
+    echo "  ✗ figlet-fonts directory not found"
+fi
+
+# Copy BreezeX-Black icon theme
+if [ -d "$REPO_DIR/BreezeX-Black" ]; then
+    mkdir -p ~/.local/share/icons
+    cp -r "$REPO_DIR/BreezeX-Black" ~/.local/share/icons/
+    echo "  ✓ Copied BreezeX-Black to ~/.local/share/icons/"
+else
+    echo "  ✗ BreezeX-Black directory not found"
+fi

@@ -1,4 +1,8 @@
 @import "colors.css";
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
 * {
     border: none;
     border-radius: 0;
@@ -8,32 +12,17 @@
     min-height: 0;
 }
 
-/* #workspaces button.empty {
-    color: #E08290;
-} */
-
-/* Fix icon alignment - add extra left padding to center icons */
-#custom-launcher {
-    font-size: 18px;
-    padding: 5px 12px;
-}
-
-#custom-clipboard,
-#custom-screenshot {
-    padding: 5px 12px;
-}
-
-#custom-power {
-    font-size: 16px;
-    padding: 5px 12px;
-}
-
 window#waybar {
-    background: rgba(20, 18, 24, 0.7); /* @surface with opacity */
+    background: rgba(20, 18, 24, 0.7);
     color: @on_surface;
 }
 
-/* Left modules */
+/* ============================================
+   LEFT SIDE MODULES
+   Color pattern: secondary → tertiary → secondary → tertiary → secondary
+   (cpu → memory-gpu → network → temp → disk)
+   ============================================ */
+
 #custom-launcher {
     background: @primary;
     color: @on_primary;
@@ -48,24 +37,12 @@ window#waybar {
     padding-right: 13px;
 }
 
-#custom-code {
-    background: @surface_container_high;
-    color: @tertiary;
-    padding: 5px 12px;
-    margin: 5px 2px;
-    border-radius: 16px;
-    font-size: 16px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 6px;
-    padding-right: 12px;
-}
-
+/* Shared base styles for left modules */
 #cpu,
-#memory,
+#custom-memory-gpu,
 #network,
-#custom-gpu,
-#disk {
+#temperature,
+#custom-disk {
     background: @surface_container_high;
     color: @on_surface;
     padding: 5px 12px;
@@ -73,11 +50,12 @@ window#waybar {
     border-radius: 16px;
 }
 
+/* Alternating colors - Pattern: secondary, tertiary */
 #cpu {
     color: @secondary;
 }
 
-#memory {
+#custom-memory-gpu {
     color: @tertiary;
 }
 
@@ -85,15 +63,31 @@ window#waybar {
     color: @secondary;
 }
 
-#custom-gpu {
+#temperature {
     color: @tertiary;
 }
 
-#disk {
+#custom-disk {
     color: @secondary;
 }
 
-/* Center modules */
+#custom-wallpaper {
+    background: @primary;
+    color: @surface_container_high;
+    padding: 5px 12px;
+    margin: 5px 2px;
+    border-radius: 16px;
+    font-size: 16px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 9px;
+    padding-right: 12px;
+}
+
+/* ============================================
+   CENTER MODULES
+   ============================================ */
+
 #workspaces {
     background: transparent;
     margin: 5px;
@@ -131,15 +125,27 @@ window#waybar {
     font-weight: 700;
 }
 
-/* Right modules */
+#custom-notification,
+#mpris {
+    background: @primary;
+    color: @surface_container_high;
+    padding: 5px 12px;
+    margin: 5px 2px;
+    border-radius: 16px;
+}
+
+/* ============================================
+   RIGHT SIDE MODULES
+   Color pattern: secondary → tertiary → secondary → tertiary → secondary
+   (ime → clock → weather → pulseaudio → wifi)
+   ============================================ */
+
+/* Shared base styles for right modules */
 #custom-ime,
 #clock,
 #custom-weather,
-#custom-clipboard,
-#custom-screenshot,
-#network.wifi,
 #pulseaudio,
-#custom-power {
+#network.wifi {
     background: @surface_container_high;
     color: @on_surface;
     padding: 5px 12px;
@@ -151,6 +157,7 @@ window#waybar {
     padding-right: 12px;
 }
 
+/* Alternating colors - Pattern: secondary, tertiary */
 #custom-ime {
     color: @secondary;
     font-weight: 600;
@@ -169,31 +176,45 @@ window#waybar {
     color: @tertiary;
 }
 
-#network.wifi {
-    color: @secondary;
-}
-
 #pulseaudio.muted {
     color: @tertiary;
 }
 
+#network.wifi {
+    color: @secondary;
+}
+
 #custom-quick-actions {
-    color: @primary_fixed_dim;
+    background: @primary;
+    color: @surface_container_high;
+    padding: 5px 12px;
+    margin: 5px 2px;
+    border-radius: 16px;
+    font-size: 16px;
     padding-top: 3px;
     padding-bottom: 4px;
     padding-left: 9px;
     padding-right: 13px;
 }
 
+/* ============================================
+   SPECIAL MODULES (isolated colors)
+   ============================================ */
+
 #custom-power {
-    background: #E08290;
+    background: #E08290;  /* Isolated error color */
     color: @on_error;
     margin-right: 5px;
     padding: 0 12px;
     font-size: 16px;
+    border-radius: 16px;
+    margin: 5px 5px 5px 2px;
 }
 
-/* Tooltips */
+/* ============================================
+   TOOLTIPS
+   ============================================ */
+
 tooltip {
     background: @surface_container;
     border: 2px solid @primary;
@@ -204,27 +225,4 @@ tooltip {
 tooltip label {
     color: @on_surface;
     padding: 5px;
-}
-
-#custom-quick-actions,
-#custom-wallpaper {
-    background: @primary;
-    color: @surface_container_high;
-    padding: 5px 12px;
-    margin: 5px 2px;
-    border-radius: 16px;
-    font-size: 16px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-left: 9px;
-    padding-right: 12px;
-}
-
-#custom-notification,
-#mpris {
-    background: @primary;
-    color: @surface_container_high;
-    padding: 5px 12px;
-    margin: 5px 2px;
-    border-radius: 16px;
 }
