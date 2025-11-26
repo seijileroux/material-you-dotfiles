@@ -131,9 +131,6 @@ if [ -n "$selected" ]; then
             # Use [0] and +adjoin to ensure only first frame for GIFs
             convert "$wallpaper_path[0]" +adjoin "$HOME/.cache/last_wallpaper_static.jpg"
 
-            # Copy to SDDM theme directory (requires sudo)
-            sudo cp "$HOME/.cache/last_wallpaper_static.jpg" /usr/share/sddm/themes/sugar-dark/Background.jpg
-
             # Apply wallpaper and generate colors system-wide using matugen
             matugen image "$wallpaper_path" &
 

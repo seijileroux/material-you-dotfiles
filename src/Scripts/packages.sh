@@ -88,7 +88,8 @@ if [ "$MODE" = "install" ]; then
     
     if [ "$SOURCE" = "repo" ]; then
         # pacman -Slq lists all repository packages (names only)
-        PKG_LIST_COMMAND="pacman -Slq"
+        # sort -u removes duplicates from multiple repos (e.g., CachyOS)
+        PKG_LIST_COMMAND="pacman -Slq | sort -u"
         PREVIEW_COMMAND="pacman -Si {1}"
         PROMPT_TEXT="[INSTALL - REPO ONLY] > "
 
@@ -113,10 +114,13 @@ if [ "$MODE" = "install" ]; then
     # Execute the fuzzy search and installation
     eval "$PKG_LIST_COMMAND" | \
     fzf --multi \
-        --border=rounded \
-        --prompt="$PROMPT_TEXT" \
         --pointer="" \
         --marker="" \
+        --height=100% \
+        --reverse \
+        --color=fg:7,bg:-1,hl:4,fg+:7,bg+:-1,hl+:4,info:2,prompt:4,pointer:3,marker:7,spinner:7,header:4 \
+        --preview-window=right:50%:wrap \
+        --prompt="$PROMPT_TEXT" \
         --preview "$PREVIEW_COMMAND" | \
     xargs -ro $EXEC_COMMAND
 
@@ -132,10 +136,13 @@ elif [ "$MODE" = "uninstall" ]; then
 
     $PKG_LIST_COMMAND | \
     fzf --multi \
-        --border=rounded \
-        --prompt="$PROMPT_TEXT" \
         --pointer="" \
         --marker="" \
+        --height=100% \
+        --reverse \
+        --color=fg:7,bg:-1,hl:4,fg+:7,bg+:-1,hl+:4,info:2,prompt:4,pointer:3,marker:7,spinner:7,header:4 \
+        --preview-window=right:50%:wrap \
+        --prompt="$PROMPT_TEXT" \
         --preview "$PREVIEW_COMMAND" | \
     xargs -ro $EXEC_COMMAND
 fi

@@ -11,7 +11,7 @@ country_code_to_flag() {
         echo "$flag_file"
     else
         echo ""
-    fi
+    i
 }
 
 # Get current exit node status using JSON output

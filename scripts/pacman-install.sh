@@ -398,7 +398,7 @@ fi
 if [ ${#FINAL_PACKAGES[@]} -gt 0 ]; then
     echo ""
     echo -e "${GREEN}Installing ${#FINAL_PACKAGES[@]} official packages...${NC}"
-    sudo pacman -Syu --needed "${FINAL_PACKAGES[@]}"
+    sudo pacman -Syu --needed --assume-installed "${FINAL_PACKAGES[@]}"
 
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}✓ Official packages installed successfully${NC}"
@@ -431,7 +431,7 @@ if [ "$INSTALL_AUR" = true ]; then
     if [ ${#AUR_FINAL_PACKAGES[@]} -gt 0 ]; then
         echo ""
         echo -e "${GREEN}Installing ${#AUR_FINAL_PACKAGES[@]} AUR packages using $AUR_HELPER...${NC}"
-        "$AUR_HELPER" -S --needed "${AUR_FINAL_PACKAGES[@]}"
+        "$AUR_HELPER" -S --needed --assume-installed "${AUR_FINAL_PACKAGES[@]}"
 
         if [ $? -eq 0 ]; then
             echo -e "${GREEN}✓ AUR packages installed successfully${NC}"

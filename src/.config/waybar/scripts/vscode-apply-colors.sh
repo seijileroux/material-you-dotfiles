@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 import json
 
-SETTINGS_FILE = "/home/kuroma/.config/Code - OSS/User/settings.json"
-COLORS_FILE = "/home/kuroma/.config/Code - OSS/User/vscode-colors.json"
+SETTINGS_FILE = "/home/kuroma/.config/VSCodium/User/settings.json"
+COLORS_FILE = "/home/kuroma/.config/VSCodium/User/vscode-colors.json"
 
 try:
     # Read color customizations

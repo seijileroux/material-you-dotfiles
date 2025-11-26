@@ -74,7 +74,7 @@ post_hook = 'killall btop'
 
 [templates.vscode]
 input_path = '~/.config/matugen/templates/vscode-settings.json'
-output_path = '~/.config/Code - OSS/User/vscode-colors.json'
+output_path = '~/.config/VSCodium/User/vscode-colors.json'
 post_hook = '~/.config/waybar/scripts/vscode-apply-colors.sh'
 
 [templates.gimp]

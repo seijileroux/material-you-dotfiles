@@ -11,7 +11,8 @@ local catppuccin = {
   comment = '#6c6c6c',
 }
 
-require('base16-colorscheme').setup({
+-- Base16 colors setup (VSCode-compatible, no plugin dependency)
+local base16 = {
   base00 = '#151218',           -- Background
   base01 = '#1e1a20',  -- Lighter background (status bars, line number)
   base02 = '#2c292e', -- Selection background
@@ -20,7 +21,6 @@ require('base16-colorscheme').setup({
   base05 = '#e8e0e8',        -- Default foreground
   base06 = '#e8e0e8',        -- Light foreground
   base07 = '#3c383e',    -- Light background
-
   base08 = catppuccin.red,                              -- Variables, XML tags, markup link text
   base09 = catppuccin.yellow,                           -- Integers, booleans, constants
   base0A = catppuccin.yellow,                           -- Classes, markup bold
@@ -29,7 +29,12 @@ require('base16-colorscheme').setup({
   base0D = '#d0c1da',         -- Functions, methods (matugen)
   base0E = '#dbb9f9',           -- Keywords, storage (matugen)
   base0F = catppuccin.magenta,                          -- Deprecated, embedded
-})
+}
+
+-- Apply base16 colors directly (works in VSCode Neovim)
+vim.api.nvim_set_hl(0, 'Normal', { fg = base16.base05, bg = base16.base00 })
+vim.api.nvim_set_hl(0, 'NormalFloat', { fg = base16.base05, bg = base16.base01 })
+vim.api.nvim_set_hl(0, 'NormalNC', { fg = base16.base05, bg = base16.base00 })
 
 
 -- Additional highlight customizations for better readability

@@ -22,11 +22,7 @@ else
     echo "f" > "$STATE_FILE"
 fi
 
-# Read location from file
-if [ ! -f "$LOCATION_FILE" ]; then
-    echo "{\"text\":\"No Location\",\"tooltip\":\"Create ~/.weather_location with lat,lon\"}"
-    exit 1
-fi
+i
 
 IFS=',' read -r latitude longitude <<< "$(cat "$LOCATION_FILE")"
 
