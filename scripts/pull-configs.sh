@@ -39,6 +39,10 @@ RICE_CONFIGS=(
     "kitty"
     "fastfetch"
     "btop"
+    
+    # Media players
+    "mpv"
+    "imv"
 )
 
 for config in "${RICE_CONFIGS[@]}"; do

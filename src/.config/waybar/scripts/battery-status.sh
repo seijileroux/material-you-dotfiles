@@ -4,7 +4,7 @@
 BATTERY_PATH="/sys/class/power_supply/BAT0"
 if [ ! -d "$BATTERY_PATH" ] && [ ! -d "/sys/class/power_supply/BAT1" ]; then
     # No battery found - desktop PC
-    echo '{"text":"󰐥","tooltip":"Power Menu","class":"no-battery"}'
+    echo '{"text":"⏻","tooltip":"Power Menu","class":"no-battery"}'
     exit 0
 fi
 
@@ -49,8 +49,6 @@ else
         class="critical"
     fi
 fi
-
-# Calculate time remaining/until full
 if [ -f "$BATTERY_PATH/power_now" ] && [ -f "$BATTERY_PATH/energy_now" ]; then
     power_now=$(cat "$BATTERY_PATH/power_now")
     energy_now=$(cat "$BATTERY_PATH/energy_now")
@@ -71,9 +69,32 @@ if [ -f "$BATTERY_PATH/power_now" ] && [ -f "$BATTERY_PATH/energy_now" ]; then
     else
         tooltip="$icon $capacity% - $status"
     fi
+elif [ -f "$BATTERY_PATH/current_now" ] && [ -f "$BATTERY_PATH/charge_now" ]; then
+    current_now=$(cat "$BATTERY_PATH/current_now")
+    charge_now=$(cat "$BATTERY_PATH/charge_now")
+    
+    absolute_current_now=${current_now#-}
+
+    if [ "$absolute_current_now" -gt 0 ]; then
+        if [ "$status" = "Charging" ]; then
+            charge_full=$(cat "$BATTERY_PATH/charge_full")
+            
+            time_seconds=$(( (charge_full - charge_now) * 3600 / absolute_current_now ))
+            
+            hours=$((time_seconds / 3600))
+            minutes=$(( (time_seconds % 3600) / 60 ))
+            tooltip="$icon $capacity% - ${hours}h ${minutes}m until full"
+        else
+            time_seconds=$(( charge_now * 3600 / absolute_current_now ))
+            
+            hours=$((time_seconds / 3600))
+            minutes=$(( (time_seconds % 3600) / 60 ))
+            tooltip="$icon $capacity% - ${hours}h ${minutes}m remaining"
+        fi
+    else
+        tooltip="$icon $capacity% - $status"
+    fi
 else
     tooltip="$icon $capacity% - $status"
 fi
-
-# Output JSON for waybar
-echo "{\"text\":\"$icon $capacity%\",\"tooltip\":\"$tooltip\",\"class\":\"$class\"}"
+echo "{"text":"$icon $capacity%","tooltip":"$tooltip","class":"$class"}"

@@ -12,7 +12,7 @@ ask_yes_no() {
     local prompt="$1"
     local response
     read -r -p "$(echo -e "${BLUE}${prompt} [Y/n]:${NC} ")" response
-    response=${response,,} # tolower
+    response=${response,,} # to-lower
     if [[ -z "$response" ]] || [[ "$response" =~ ^(y|yes)$ ]]; then
         return 0 # yes
     else

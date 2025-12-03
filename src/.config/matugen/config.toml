@@ -85,7 +85,7 @@ post_hook = 'killall -HUP xsettingsd'
 [templates.nwg-lock]
 input_path = '~/.config/matugen/templates/colors.css'
 output_path = '~/.config/nwg-dock-hyprland/colors.css'
-post_hook = 'killall nwg-dock-hyprland; hyprctl dispatch exec "nwg-dock-hyprland -p bottom -a center -mb 5 -d"'
+post_hook = 'killall nwg-dock-hyprland'
 
 [templates.nwg-drawer]
 input_path = '~/.config/matugen/templates/colors.css'

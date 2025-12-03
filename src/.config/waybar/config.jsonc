@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
+    "height": 20,
     "spacing": 4,
     "reload_style_on_change": true,
 
@@ -33,14 +33,14 @@
 
     // Left modules
     "custom/launcher": {
-        "format": "󰣇",
+        "format": "",
         "tooltip-format": "Application launcher",
         "on-click": "rofi -show drun -modi drun -theme ~/.config/rofi/grid.rasi"
     },
 
     "custom/wallpaper": {
         "exec": "ls ~/Pictures/Wallpapers | wc -l",
-        "format": "󰸉",
+        "format": "",
         "tooltip-format": "Pick from {} wallpapers!",
         "on-click": "~/.config/waybar/scripts/wallpaper-selector.sh"
     },
