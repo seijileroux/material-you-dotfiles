@@ -13,21 +13,21 @@ local catppuccin = {
 
 -- Base16 colors setup (VSCode-compatible, no plugin dependency)
 local base16 = {
-  base00 = '#141318',           -- Background
-  base01 = '#1c1b20',  -- Lighter background (status bars, line number)
-  base02 = '#2b292f', -- Selection background
-  base03 = '#938f99',           -- Comments, invisibles, line highlighting
-  base04 = '#c9c4d0', -- Dark foreground (status bars)
-  base05 = '#e6e1e9',        -- Default foreground
-  base06 = '#e6e1e9',        -- Light foreground
-  base07 = '#3a383e',    -- Light background
+  base00 = '#131318',           -- Background
+  base01 = '#1b1b21',  -- Lighter background (status bars, line number)
+  base02 = '#2a292f', -- Selection background
+  base03 = '#918f9a',           -- Comments, invisibles, line highlighting
+  base04 = '#c8c5d0', -- Dark foreground (status bars)
+  base05 = '#e4e1e9',        -- Default foreground
+  base06 = '#e4e1e9',        -- Light foreground
+  base07 = '#39383f',    -- Light background
   base08 = catppuccin.red,                              -- Variables, XML tags, markup link text
   base09 = catppuccin.yellow,                           -- Integers, booleans, constants
   base0A = catppuccin.yellow,                           -- Classes, markup bold
   base0B = catppuccin.green,                            -- Strings, markup code
   base0C = catppuccin.blue,                             -- Support, regular expressions
-  base0D = '#cac3dc',         -- Functions, methods (matugen)
-  base0E = '#cbbeff',           -- Keywords, storage (matugen)
+  base0D = '#c6c4dd',         -- Functions, methods (matugen)
+  base0E = '#c1c1ff',           -- Keywords, storage (matugen)
   base0F = catppuccin.magenta,                          -- Deprecated, embedded
 }
 
@@ -48,20 +48,20 @@ end
 
 -- UI Elements
 vim.api.nvim_set_hl(0, 'Visual', {
-  bg = '#493e76',
+  bg = '#404178',
   fg = nil,
 })
 
 vim.api.nvim_set_hl(0, 'CursorLine', {
-  bg = '#2b292f',
+  bg = '#2a292f',
 })
 
 vim.api.nvim_set_hl(0, 'LineNr', {
-  fg = '#938f99',
+  fg = '#918f9a',
 })
 
 vim.api.nvim_set_hl(0, 'CursorLineNr', {
-  fg = '#cbbeff',
+  fg = '#c1c1ff',
   bold = true,
 })
 
@@ -73,12 +73,12 @@ set_hl_multiple({ 'Comment', '@comment' }, {
 
 -- Keywords (primary matugen color)
 set_hl_multiple({ 'Keyword', '@keyword', '@keyword.control', '@keyword.function', 'Conditional', 'Repeat' }, {
-  fg = '#cbbeff',
+  fg = '#c1c1ff',
 })
 
 -- Functions (secondary matugen color)
 set_hl_multiple({ 'Function', '@function', '@function.call', '@method', '@method.call' }, {
-  fg = '#cac3dc',
+  fg = '#c6c4dd',
 })
 
 -- Strings (green)
@@ -98,7 +98,7 @@ set_hl_multiple({ 'Type', '@type', '@type.builtin', 'Structure', 'StorageClass' 
 
 -- Variables (default text color)
 set_hl_multiple({ 'Identifier', '@variable', '@parameter' }, {
-  fg = '#e6e1e9',
+  fg = '#e4e1e9',
 })
 
 -- Special/Magic variables (red)
@@ -109,22 +109,22 @@ set_hl_multiple({ '@variable.builtin', 'Special' }, {
 
 -- Operators
 set_hl_multiple({ 'Operator', '@operator' }, {
-  fg = '#e6e1e9',
+  fg = '#e4e1e9',
 })
 
 -- Punctuation
 set_hl_multiple({ 'Delimiter', '@punctuation.delimiter', '@punctuation.bracket' }, {
-  fg = '#c9c4d0',
+  fg = '#c8c5d0',
 })
 
 -- Tags (HTML/XML)
 set_hl_multiple({ 'Tag', '@tag', '@tag.delimiter' }, {
-  fg = '#cbbeff',
+  fg = '#c1c1ff',
 })
 
 -- Attributes
 set_hl_multiple({ '@tag.attribute' }, {
-  fg = '#cac3dc',
+  fg = '#c6c4dd',
   italic = true,
 })
 
@@ -147,38 +147,38 @@ vim.api.nvim_set_hl(0, 'DiagnosticInfo', {
 })
 
 vim.api.nvim_set_hl(0, 'DiagnosticHint', {
-  fg = '#c9c4d0',
+  fg = '#c8c5d0',
 })
 
 -- Statusline & UI
 vim.api.nvim_set_hl(0, 'StatusLine', {
-  bg = '#201f24',
-  fg = '#e6e1e9',
+  bg = '#1f1f25',
+  fg = '#e4e1e9',
 })
 
 vim.api.nvim_set_hl(0, 'MsgArea', {
-  bg = '#141318',
-  fg = '#e6e1e9',
+  bg = '#131318',
+  fg = '#e4e1e9',
 })
 
 -- Pmenu (completion menu)
 vim.api.nvim_set_hl(0, 'Pmenu', {
-  bg = '#2b292f',
-  fg = '#e6e1e9',
+  bg = '#2a292f',
+  fg = '#e4e1e9',
 })
 
 vim.api.nvim_set_hl(0, 'PmenuSel', {
-  bg = '#cbbeff',
-  fg = '#32285e',
+  bg = '#c1c1ff',
+  fg = '#292a60',
 })
 
 -- Search
 vim.api.nvim_set_hl(0, 'Search', {
-  bg = '#484458',
-  fg = '#e6dff9',
+  bg = '#454559',
+  fg = '#e2e0f9',
 })
 
 vim.api.nvim_set_hl(0, 'IncSearch', {
-  bg = '#cbbeff',
-  fg = '#32285e',
+  bg = '#c1c1ff',
+  fg = '#292a60',
 })

@@ -38,7 +38,7 @@ if command -v nvidia-smi &> /dev/null; then
     fi
 else
     # No NVIDIA GPU - show RAM only
-    display_text="${mem_percent}%"
+    display_text="󰍛 ${mem_percent}%"
     tooltip="󰍛 RAM: ${mem_used} / ${mem_total} (${mem_percent}%)"
 fi
 

@@ -4,7 +4,7 @@
 BATTERY_PATH="/sys/class/power_supply/BAT0"
 if [ ! -d "$BATTERY_PATH" ] && [ ! -d "/sys/class/power_supply/BAT1" ]; then
     # No battery found - desktop PC
-    echo '{"text":"⏻","tooltip":"Power Menu","class":"no-battery"}'
+    echo '{"text":"󰐥","tooltip":"Power Menu","class":"no-battery"}'
     exit 0
 fi
 
@@ -49,6 +49,7 @@ else
         class="critical"
     fi
 fi
+
 if [ -f "$BATTERY_PATH/power_now" ] && [ -f "$BATTERY_PATH/energy_now" ]; then
     power_now=$(cat "$BATTERY_PATH/power_now")
     energy_now=$(cat "$BATTERY_PATH/energy_now")
@@ -97,4 +98,6 @@ elif [ -f "$BATTERY_PATH/current_now" ] && [ -f "$BATTERY_PATH/charge_now" ]; th
 else
     tooltip="$icon $capacity% - $status"
 fi
-echo "{"text":"$icon $capacity%","tooltip":"$tooltip","class":"$class"}"
+
+# Output JSON for waybar
+echo "{\"text\":\"$icon $capacity%\",\"tooltip\":\"$tooltip\",\"class\":\"$class\"}"
