@@ -169,10 +169,6 @@ window#waybar {
     color: @tertiary;
 }
 
-#network.wifi {
-    color: @secondary;
-}
-
 #custom-quick-actions {
     background: @primary;
     color: @surface_container_high;
@@ -189,7 +185,7 @@ window#waybar {
     background: #E08290;  /* Isolated error color */
     color: @on_error;
     padding: 5px 12px;
-    margin: 5px 0 5px 0px;
+    margin: 5px 5px 5px 0px;
     border-radius: 16px;
 }
 

@@ -48,7 +48,7 @@ entry {
 listview {
     background-color: transparent;
     columns: 3;
-    lines: 4;
+    lines: 1;
     spacing: 8px;
     scrollbar: false;
     fixed-columns: true;
@@ -70,6 +70,7 @@ element {
 element-icon {
     size: 96px;
     horizontal-align: 0.5;
+    color: @secondary;
 }
 
 element-text {

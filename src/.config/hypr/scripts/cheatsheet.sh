@@ -42,6 +42,8 @@ KEYBINDS=$(grep -E '^(bind|bindl|binde|bindm)' "$KEYBINDS_CONF" \
       gsub(/CTRL/, "󰘴", keys)
       gsub(/SHIFT/, "󰘶", keys)
       gsub(/SPACE/, "󱁐", keys)
+      gsub(/bracketleft/, "[", keys)
+      gsub(/bracketright/, "]", keys)
       gsub(/hyprexpo:expo/, "", keys)
       gsub(/overview:toggle/, "", keys)
       gsub(/mouse:272/, "LMB", keys)

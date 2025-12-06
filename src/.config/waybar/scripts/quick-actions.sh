@@ -5,7 +5,7 @@ menu=(
     " Calculator"
     "󰹑 Screenshot"
     "󰅇 Clipboard"
-    " Code"
+    " Layouts"
     "󰞅 Emojis"
     " Icons"
     " Picker"
@@ -26,9 +26,6 @@ if [ -n "$selected" ]; then
             ;;
         "󰅇 Clipboard")
             clipse-gui
-            ;;
-        " Code")
-            ~/.config/waybar/scripts/code-launcher.sh
             ;;
         "󰞅 Emojis")
             rofi -show emoji -theme ~/.config/rofi/config.rasi
@@ -56,6 +53,9 @@ if [ -n "$selected" ]; then
             ;;
         " Calculator")
             rofi -show calc -modi calc -no-show-match -no-sort
+            ;;
+        " Layouts")
+            ~/.config/waybar/scripts/layout-switcher.sh
             ;;
     esac
 fi
