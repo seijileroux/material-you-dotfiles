@@ -31,14 +31,6 @@ window#waybar {
     border-radius: 16px;
 }
 
-#custom-cava {
-    background: @surface_container_high;
-    color: @primary;
-    padding: 5px 10px;
-    margin: 5px 0 5px 5px;
-    border-radius: 16px;
-}
-
 /* Shared base styles for left modules */
 #cpu,
 #custom-memory-gpu,

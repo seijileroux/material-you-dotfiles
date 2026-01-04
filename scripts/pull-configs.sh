@@ -16,6 +16,7 @@ RICE_CONFIGS=(
     "wlogout"
     "nwg-dock-hyprland"
     "systemd"
+    "hyprshell"
 
     # Theming
     "kdeglobals"
